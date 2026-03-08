@@ -28,9 +28,10 @@
          /* ── HERO ── */
          #hero {
          min-height: 100vh;
-         background: linear-gradient(160deg, #050d0f 0%, #0f2226 25%, #1e3d42 55%, #34656D 78%, #1a3035 100%);
+         background: linear-gradient(160deg, #050d0f 0%, #0f2226 25%, #1e3d42 55%, #34656D 78%, #1a3035 100%) !important;
          display: flex; flex-direction: column; align-items: center; justify-content: center;
          position: relative; overflow: hidden; padding: 60px 20px;
+         max-width: 100% !important;
          }
          #hero::before {
          content: ''; position: absolute; inset: 0;
@@ -53,7 +54,7 @@
          .scroll-hint::after { content: ''; width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent); animation: scroll-pulse 2s ease infinite; }
          @keyframes scroll-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.9; } }
          /* ── SHARED SECTIONS ── */
-         section { padding: clamp(60px,8vw,120px) clamp(20px,6vw,80px); max-width: 1000px; margin: 0 auto; background: #fdf6ec; }
+         section:not(#hero) { padding: clamp(60px,8vw,120px) clamp(20px,6vw,80px); max-width: 1000px; margin: 0 auto; background: #fdf6ec; }
          .section-label { font-family: 'Cinzel', serif; font-size: clamp(11px,2.2vw,12px); letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; text-align: center; margin-bottom: 14px; opacity: 0; transform: translateY(20px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
          @media (max-width: 480px) { .section-label { letter-spacing: 0.15em; font-size: 12px; } .countdown-label { letter-spacing: 0.12em; font-size: 11px; } .event-name { letter-spacing: 0.15em; font-size: 12px; } }
          .section-label.visible { opacity: 1; transform: none; }
